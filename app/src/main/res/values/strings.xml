@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CodeLab2</string>
+    <string name="fc2_nature_meditations">Nature</string>
+    <string name="title_activity_lazy_row">LazyRow</string>
+    <string name="title_activity_leji_row">LejiRow</string>
+    <string name="title_activity_leji_column">LejiColumn</string>
+    <string name="title_activity_leji_grid">LejiGrid</string>
+</resources>
