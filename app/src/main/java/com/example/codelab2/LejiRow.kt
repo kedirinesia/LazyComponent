@@ -48,3 +48,11 @@ fun LazyRoww() {
     }
     }
 }
+
+
+
+@Preview
+@Composable
+fun LazyRowwPreview(){
+    LazyRoww()
+}

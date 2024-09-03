@@ -113,7 +113,7 @@ verticalArrangement = Arrangement.Center,
             Text(text = "Lazy Row")
 
         }
-        Button(onClick = {  }) {
+        Button(onClick = { context.startActivity(Intent(context, LejiGrid::class.java)) }) {
             Text(text = "Lazy Grid")
 
         }
