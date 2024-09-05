@@ -3,8 +3,14 @@ package com.example.codelab2
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
@@ -18,11 +24,14 @@ import androidx.compose.ui.unit.dp
 class LejiRow : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
             bodyRow()
+            //LazyRoww()
         }
     }
 }
+
 
 data class BodyItem(val drawable: Int, val text: String)
 
@@ -30,21 +39,21 @@ val BodyData = listOf(
     BodyItem(R.drawable.img1, "Gambar 1"),
     BodyItem(R.drawable.imgg, "Gambar 2"),
     BodyItem(R.drawable.img4, "Gambar 3"),
-    BodyItem(R.drawable.img5, "Gambar 4")
-)
+    BodyItem(R.drawable.img5, "Gambar 4"),
 
+    )
 data class FotoItem(val drawable: Int, val text: String)
-
 val foto = listOf(
-    FotoItem(R.drawable.nature, "Gambar 1"),
-    FotoItem(R.drawable.imgg, "Gambar 2"),
-    FotoItem(R.drawable.imgg6, "Gambar 3")
+   FotoItem(R.drawable.nature, "Gambar 1"),
+    FotoItem(R.drawable.imgg, "Foto 2"),
+    FotoItem(R.drawable.imgg6, "")
 )
 
 @Composable
 fun bodyRow(
     modifier: Modifier = Modifier,
 ) {
+
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -55,26 +64,21 @@ fun bodyRow(
         LazyRow(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.fillMaxWidth()
+            modifier = modifier
         ) {
             items(BodyData) { item ->
-                BodyElement(drawable = item.drawable, text = item.text)
+                BodyElement(item.drawable, item.text)
             }
         }
 
-        Spacer(modifier = Modifier.height(16.dp))
+        LazyRow {
 
-        LazyRow(
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(8.dp),
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            items(foto) { item ->
-                BodyElement(drawable = item.drawable, text = item.text)
-            }
         }
+
     }
 }
+
+
 
 @Composable
 fun BodyElement(drawable: Int, text: String) {
@@ -89,8 +93,29 @@ fun BodyElement(drawable: Int, text: String) {
     }
 }
 
+
+@Composable
+fun LazyRoww() {
+    val itemsList = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+
+
+
+
+
+    LazyRow(
+
+
+    ) {
+        items(itemsList) { item ->
+            Text(text = item)
+
+        }
+    }
+}
+
+
 @Preview
 @Composable
-fun BodyRowPreview() {
+fun LazyRowwPreview() {
     bodyRow()
 }

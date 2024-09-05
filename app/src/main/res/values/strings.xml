@@ -5,4 +5,6 @@
     <string name="title_activity_leji_row">LejiRow</string>
     <string name="title_activity_leji_column">LejiColumn</string>
     <string name="title_activity_leji_grid">LejiGrid</string>
+    <string name="title_activity_home_screen">HomeScreen</string>
+    <string name="title_activity_hom_skrin">HomSkrin</string>
 </resources>

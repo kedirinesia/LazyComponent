@@ -103,6 +103,9 @@ verticalArrangement = Arrangement.Center,
 
 
         ) {
+        Button(onClick = { context.startActivity(Intent(context, HomSkrin::class.java))}) {
+            Text(text = "Home   Screen")
+        }
 
         Button(onClick = { context.startActivity(Intent(context, LejiColumn ::class.java),
             ) }) {
